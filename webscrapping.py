@@ -31,7 +31,8 @@ class DataParser:
             if not tmp.find('<strong>') == -1:
                 tmp = tmp[tmp.find('<strong>') + 8 : tmp.find('</strong>')]
             tmp = tmp.strip()
-            new_str.append(tmp)
+            if tmp:
+                new_str.append(tmp)
         return new_str
 
 obj = DataReader('http://www.jedynka.zgora.pl/?show=kadra')
